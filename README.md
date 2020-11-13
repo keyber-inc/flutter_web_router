@@ -1,18 +1,79 @@
 # flutter_web_router
 
-A new flutter plugin project.
+A router that handles request URIs with wildcards.
 
-## Getting Started
+## usage
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/developing-packages/),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+- 1. Set up `WebRouter`
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```dart
+    final router = WebRouter();
+```
 
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` under the same
-directory. You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms.
+If you want to show error pages. Please add error pages.
+
+```
+    router.addForbiddenRoute((request) => ForbiddenPage());
+    router.addNotFoundRoute((request) => NotFoundPage());
+    router.addInternalErrorRoute((request) => InternalErrorPage());
+```
+
+Please add URIs of page. You can add URIs with wildcards.
+
+```dart
+    router.addRoute('/login', (request) => LoginPage());
+    router.addRoute('/', (request) => DashboardPage());
+    router.addRoute('items/index', (request) => ItemListPage());
+    router.addRoute('items/view/{itemId}', (request) => ItemViewPage(request: request));
+```
+
+If you want to verify a user, please add filters.
+
+```dart
+    router.addFilter(LoginVerificationFilter());
+```
+
+Finally, you can set a transition.
+
+```dart
+    // set OnComplete handler
+    router.setOnComplete((settings, widget) {
+      // fade transition
+      return PageRouteBuilder(
+        settings: settings,
+        pageBuilder: (_, __, ___) => widget,
+        transitionsBuilder: (_, anim, __, child) {
+          return FadeTransition(
+            opacity: anim,
+            child: child,
+          );
+        },
+      );
+    });
+```
+
+- 2. set `router.build()` to `onGenerateRoute`
+
+```dart
+    return MaterialApp(
+      ...
+      onGenerateRoute: router.build(),
+      ...
+    );
+```
+
+- 3. navigate with `WebRequest`
+
+If you want to request URIs used wildcards, use `WebRequest`.
+
+```dart
+    final request = WebRequest.request(
+      'items/view/{itemId}',
+      data: {
+        'itemId': '1',
+      },
+    );
+    await Navigator.of(context).pushNamed(
+      request.uri.toString(),
+    );
+```
