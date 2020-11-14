@@ -10,7 +10,9 @@ class WebRequest {
     this.data,
   });
 
+  ///
   /// from RouteSettings
+  ///
   factory WebRequest.settings(
     RouteSettings settings, {
     String route,
@@ -31,10 +33,8 @@ class WebRequest {
         throw Exception();
       }
 
-      // 個々のパスを調べる
       for (int i = 0; i < requestPaths.length; i++) {
         if (requestPaths[i] != routePaths[i]) {
-          // 異なる場合は変数になっているかを調べる
           final match = RegExp(r'^\{(.+)\}$').firstMatch(routePaths[i]);
           if (match == null || match.groupCount == 0) {
             throw Exception();
@@ -55,7 +55,9 @@ class WebRequest {
     );
   }
 
+  ///
   /// from Request path
+  ///
   factory WebRequest.request(
     String route, {
     Map<String, String> data,

@@ -1,6 +1,6 @@
 # flutter_web_router
 
-A router that handles request URIs with wildcards.
+A router that handles request URIs with wildcards and generate URIs with parameters.
 
 ## usage
 
@@ -28,7 +28,8 @@ Please add URIs of page. You can add URIs with wildcards.
 ```
 
 If you want to verify a user, please add filters.
-`LoginVerificationFilter` is a sample class that implements `Filter` class.
+
+`LoginVerificationFilter` is a sample class that implements `WebFilter` class.
 
 ```dart
     router.addFilter(LoginVerificationFilter());
