@@ -4,13 +4,13 @@ A router that handles request URIs with wildcards.
 
 ## usage
 
-- 1. Set up `WebRouter`
+1. Set up `WebRouter`
 
 ```dart
     final router = WebRouter();
 ```
 
-If you want to show error pages. Please add error pages.
+If you want to show error pages, please add error pages.
 
 ```
     router.addForbiddenRoute((request) => ForbiddenPage());
@@ -28,6 +28,7 @@ Please add URIs of page. You can add URIs with wildcards.
 ```
 
 If you want to verify a user, please add filters.
+`LoginVerificationFilter` is a sample class that implements `Filter` class.
 
 ```dart
     router.addFilter(LoginVerificationFilter());
@@ -52,7 +53,7 @@ Finally, you can set a transition.
     });
 ```
 
-- 2. set `router.build()` to `onGenerateRoute`
+2. set `router.build()` to `onGenerateRoute`
 
 ```dart
     return MaterialApp(
@@ -62,7 +63,7 @@ Finally, you can set a transition.
     );
 ```
 
-- 3. navigate with `WebRequest`
+3. navigate with `WebRequest`
 
 If you want to request URIs used wildcards, use `WebRequest`.
 
