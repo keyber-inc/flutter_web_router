@@ -1,6 +1,6 @@
 name: flutter_web_router
 description: A router that handles request URIs with wildcards and generate URIs with parameters.
-version: 0.0.1+1
+version: 0.0.1+2
 homepage: https://github.com/keyber-inc/flutter_web_router
 
 environment:
