@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be35047-3f0f-4ea7-89ce-7dfc88e44b69" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/sample_pages/item_list_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/sample_pages/item_list_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/lib/sample_pages/item_view_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/sample_pages/item_view_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/web_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_filter.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/web_request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_request.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/web_router.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_router.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,22 +54,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2518" height="396" key="GridCell.Tab.0.bottom" timestamp="1619509606585">
+    <state width="2518" height="396" key="GridCell.Tab.0.bottom" timestamp="1619509706069">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.bottom/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509606585" />
-    <state width="2518" height="396" key="GridCell.Tab.0.center" timestamp="1619509606584">
+    <state width="2518" height="396" key="GridCell.Tab.0.bottom/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706069" />
+    <state width="2518" height="396" key="GridCell.Tab.0.center" timestamp="1619509706068">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.center/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509606584" />
-    <state width="2518" height="396" key="GridCell.Tab.0.left" timestamp="1619509606584">
+    <state width="2518" height="396" key="GridCell.Tab.0.center/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706068" />
+    <state width="2518" height="396" key="GridCell.Tab.0.left" timestamp="1619509706068">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.left/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509606584" />
-    <state width="2518" height="396" key="GridCell.Tab.0.right" timestamp="1619509606585">
+    <state width="2518" height="396" key="GridCell.Tab.0.left/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706068" />
+    <state width="2518" height="396" key="GridCell.Tab.0.right" timestamp="1619509706069">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509606585" />
+    <state width="2518" height="396" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706069" />
     <state x="2981" y="488" width="695" height="486" key="find.popup" timestamp="1619509298071">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
