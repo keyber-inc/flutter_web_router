@@ -7,7 +7,7 @@ import 'web_router.dart';
 /// WebFilter
 ///
 abstract class WebFilter {
-  Widget execute(WebFilterChain filterChain);
+  Widget? execute(WebFilterChain filterChain);
 }
 
 ///
@@ -17,29 +17,29 @@ class WebFilterChain {
   static final redirectMaxCount = 5;
   int redirectCount = 0;
 
-  RouteSettings _settings;
+  late RouteSettings _settings;
   RouteSettings get settings => _settings;
 
-  Map<String, WebRouterWidgetBuilder> routes;
+  late Map<String, WebRouterWidgetBuilder> routes;
 
   List<WebFilter> _filters = [];
-  WebFilterIterator _filterIterator;
+  late WebFilterIterator _filterIterator;
 
   void addFilter(WebFilter filter) {
     _filters.add(filter);
   }
 
-  Widget execute(RouteSettings settings) {
+  Widget? execute(RouteSettings settings) {
     _settings = settings;
     _filterIterator = WebFilterIterator(_filters);
     return _execute(_filterIterator.next);
   }
 
-  Widget executeNextFilter() {
+  Widget? executeNextFilter() {
     return _execute(_filterIterator.next);
   }
 
-  Widget _execute(WebFilter filter) {
+  Widget? _execute(WebFilter? filter) {
     try {
       if (filter != null) {
         return filter.execute(this);
@@ -48,9 +48,9 @@ class WebFilterChain {
       // create widget
       final routes = this.routes.keys.toList();
       for (String route in routes) {
-        final request = WebRequest.settings(settings, route: route);
+        final request = WebRequest.settings(_settings, route: route);
         if (request.verify) {
-          return this.routes[route](request);
+          return this.routes[route]!(request);
         }
       }
 
@@ -67,13 +67,13 @@ class WebFilterChain {
       return execute(e.settings);
     } on WebRouterException catch (e) {
       if (routes.containsKey(e.code)) {
-        return routes[e.code](WebRequest.settings(settings));
+        return routes[e.code]!(WebRequest.settings(settings));
       }
     }
 
     // internal error
     if (routes.containsKey('500')) {
-      return routes['500'](WebRequest.settings(settings));
+      return routes['500']!(WebRequest.settings(settings));
     }
     return null;
   }
@@ -87,23 +87,25 @@ class WebFilterIterator implements Iterator<WebFilter> {
 
   final List<WebFilter> _filters;
   int _index = 0;
-  WebFilter _current;
 
   @override
   bool moveNext() {
-    if (_index == _filters.length) {
-      _current = null;
-      return false;
-    } else {
-      _current = _filters[_index++];
+    if ((_index + 1) < _filters.length) {
+      _index++;
       return true;
     }
+    return false;
   }
 
   @override
-  get current => _current;
+  WebFilter get current {
+    if (0 <= _index && _index < _filters.length) {
+      return _filters[_index];
+    }
+    throw Exception();
+  }
 
-  get next => moveNext() ? _current : null;
+  WebFilter? get next => moveNext() ? current : null;
 }
 
 ///
@@ -112,7 +114,7 @@ class WebFilterIterator implements Iterator<WebFilter> {
 class RedirectWebRouterException extends WebRouterException {
   const RedirectWebRouterException({
     String message = '301 Moved Permanently',
-    @required this.settings,
+    required this.settings,
   }) : super(
           message: message,
           code: '301',
@@ -162,8 +164,8 @@ class InternalErrorWebRouterException extends WebRouterException {
 ///
 class WebRouterException implements Exception {
   const WebRouterException({
-    @required this.message,
-    @required this.code,
+    required this.message,
+    required this.code,
   }) : super();
 
   final String code;

@@ -20,7 +20,7 @@ class ItemListPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            RaisedButton(
+            ElevatedButton(
               child: Text('View Item 1'),
               onPressed: () async {
                 final request = WebRequest.request(
@@ -35,7 +35,7 @@ class ItemListPage extends StatelessWidget {
               },
             ),
             SizedBox(height: 20),
-            RaisedButton(
+            ElevatedButton(
               child: Text('View Item 2'),
               onPressed: () async {
                 final request = WebRequest.request(

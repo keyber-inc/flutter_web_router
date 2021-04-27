@@ -3,13 +3,16 @@ import 'package:flutter_web_router/flutter_web_router.dart';
 import 'package:flutter_web_router_example/main.dart';
 
 class ItemViewPage extends StatelessWidget {
-  ItemViewPage({Key key, this.request}) : super(key: key);
+  ItemViewPage({
+    Key? key,
+    required this.request,
+  }) : super(key: key);
 
   final WebRequest request;
 
   @override
   Widget build(BuildContext context) {
-    final itemId = request.data['itemId'];
+    final itemId = request.data!['itemId'];
     return MyScaffold(
       route: Constants.routeItemsList,
       body: Container(

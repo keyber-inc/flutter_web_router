@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 ///
 class WebRequest {
   WebRequest._({
-    this.settings,
+    required this.settings,
     this.route,
     this.data,
   });
@@ -15,15 +15,16 @@ class WebRequest {
   ///
   factory WebRequest.settings(
     RouteSettings settings, {
-    String route,
+    String? route,
   }) {
-    Map<String, String> data = {};
+    assert(settings.name != null);
+    Map<String, String>? data = {};
     try {
       if (route == null) {
         throw Exception();
       }
 
-      final requestPath = Uri.parse(settings.name).path;
+      final requestPath = Uri.parse(settings.name!).path;
       final requestPaths =
           requestPath.split('/').where((path) => path.isNotEmpty).toList();
       final routePaths =
@@ -40,7 +41,7 @@ class WebRequest {
             throw Exception();
           }
           final name = match.group(1);
-          data[name] = requestPaths[i];
+          data[name!] = requestPaths[i];
         }
       }
     } catch (e) {
@@ -60,9 +61,9 @@ class WebRequest {
   ///
   factory WebRequest.request(
     String route, {
-    Map<String, String> data,
-    Map<String, String> queryParameters,
-    Object arguments,
+    Map<String, String>? data,
+    Map<String, String>? queryParameters,
+    Object? arguments,
   }) {
     // build uri
     List<String> paths = [];
@@ -75,7 +76,7 @@ class WebRequest {
           if (match != null && match.groupCount > 0) {
             final name = match.group(1);
             assert(data[name] != null);
-            paths.add(data[name]);
+            paths.add(data[name]!);
           } else {
             paths.add(path);
           }
@@ -99,9 +100,9 @@ class WebRequest {
   }
 
   final RouteSettings settings;
-  final String route;
-  final Map<String, String> data;
+  final String? route;
+  final Map<String, String>? data;
 
-  Uri get uri => Uri.parse(settings.name);
+  Uri get uri => Uri.parse(settings.name!);
   bool get verify => route != null;
 }

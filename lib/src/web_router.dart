@@ -9,7 +9,7 @@ import 'web_request.dart';
 class WebRouter {
   Map<String, WebRouterWidgetBuilder> _routes = {};
   WebFilterChain _filterChain = WebFilterChain();
-  WebRouterOnComplete onComplete;
+  WebRouterOnComplete? onComplete;
 
   ///
   /// add Route
@@ -51,7 +51,7 @@ class WebRouter {
   ///
   /// set OnComplete
   ///
-  WebRouter setOnComplete(WebRouterOnComplete onComplete) {
+  WebRouter setOnComplete(WebRouterOnComplete? onComplete) {
     this.onComplete = onComplete;
     return this;
   }
@@ -63,7 +63,7 @@ class WebRouter {
       final widget = _filterChain.execute(settings);
       if (widget != null) {
         if (onComplete != null) {
-          return onComplete(_filterChain.settings, widget);
+          return onComplete!(_filterChain.settings, widget);
         }
 
         // default

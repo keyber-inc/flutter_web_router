@@ -4,7 +4,7 @@ description: Demonstrates how to use the flutter_web_router plugin.
 publish_to: 'none'
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -14,7 +14,7 @@ dependencies:
     path: ../
 
   cupertino_icons: ^1.0.0
-  flutter_admin_scaffold: ^0.0.2
+  flutter_admin_scaffold: ^1.0.0
 
 dev_dependencies:
   flutter_test:

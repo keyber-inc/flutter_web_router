@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_admin_scaffold/flutter_admin_scaffold.dart';
+import 'package:flutter_admin_scaffold/admin_scaffold.dart';
 import 'package:flutter_web_router/flutter_web_router.dart';
 import 'package:flutter_web_router_example/sample_pages/dashboard_page.dart';
 import 'package:flutter_web_router_example/sample_pages/forbidden_page.dart';
@@ -64,9 +64,9 @@ class MyApp extends StatelessWidget {
 
 class MyScaffold extends StatelessWidget {
   const MyScaffold({
-    Key key,
-    @required this.route,
-    @required this.body,
+    Key? key,
+    required this.route,
+    required this.body,
   }) : super(key: key);
 
   final Widget body;
@@ -79,14 +79,14 @@ class MyScaffold extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Sample'),
       ),
-      sidebar: Sidebar(
-        itemDatas: Constants.sidebarMenuItem,
+      sideBar: SideBar(
+        items: Constants.sidebarMenuItem,
         selectedRoute: route,
         onSelected: (itemData) {
           print(
               'sidebar: onTap(): title = ${itemData.title}, route = ${itemData.route}');
           if (itemData.route != null) {
-            Navigator.of(context).pushNamed(itemData.route);
+            Navigator.of(context).pushNamed(itemData.route!);
           }
         },
       ),
@@ -112,17 +112,17 @@ class Constants {
   static const routeItemsView = '/items/view/{itemId}';
 
   /// sidebar menu
-  static const sidebarMenuItem = [
-    MenuItemData(
+  static const List<MenuItem> sidebarMenuItem = [
+    MenuItem(
       title: titleDashboard,
       route: routeDashboard,
       icon: Icons.dashboard,
     ),
-    MenuItemData(
+    MenuItem(
       title: 'Item',
       icon: Icons.file_copy,
       children: [
-        MenuItemData(
+        MenuItem(
           title: titleItemsList,
           route: routeItemsList,
         ),
@@ -142,8 +142,8 @@ class LoginVerificationFilter implements WebFilter {
   bool _isLogin = true;
 
   @override
-  Widget execute(WebFilterChain filterChain) {
-    final requestPath = Uri.parse(filterChain.settings.name).path;
+  Widget? execute(WebFilterChain filterChain) {
+    final requestPath = Uri.parse(filterChain.settings.name!).path;
 
     if (_isLogin) {
       // ok, goto next filter.
