@@ -17,10 +17,12 @@ class WebRequest {
     RouteSettings settings, {
     String? route,
   }) {
-    assert(settings.name != null);
     Map<String, String>? data = {};
     try {
       if (route == null) {
+        throw Exception();
+      }
+      if (settings.name == null) {
         throw Exception();
       }
 
