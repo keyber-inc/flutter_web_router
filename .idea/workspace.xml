@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1be35047-3f0f-4ea7-89ce-7dfc88e44b69" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/web_filter.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/web_filter.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +27,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/example/lib/sample_pages" />
@@ -54,22 +54,22 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="2518" height="396" key="GridCell.Tab.0.bottom" timestamp="1619509706069">
+    <state width="1788" height="396" key="GridCell.Tab.0.bottom" timestamp="1619571730234">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.bottom/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706069" />
-    <state width="2518" height="396" key="GridCell.Tab.0.center" timestamp="1619509706068">
+    <state width="1788" height="396" key="GridCell.Tab.0.bottom/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619571730234" />
+    <state width="1788" height="396" key="GridCell.Tab.0.center" timestamp="1619571730233">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.center/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706068" />
-    <state width="2518" height="396" key="GridCell.Tab.0.left" timestamp="1619509706068">
+    <state width="1788" height="396" key="GridCell.Tab.0.center/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619571730233" />
+    <state width="1788" height="396" key="GridCell.Tab.0.left" timestamp="1619571730233">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.left/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706068" />
-    <state width="2518" height="396" key="GridCell.Tab.0.right" timestamp="1619509706069">
+    <state width="1788" height="396" key="GridCell.Tab.0.left/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619571730233" />
+    <state width="1788" height="396" key="GridCell.Tab.0.right" timestamp="1619571730233">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
-    <state width="2518" height="396" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619509706069" />
+    <state width="1788" height="396" key="GridCell.Tab.0.right/2048.23.2560.1417/0.23.2048.1257@2048.23.2560.1417" timestamp="1619571730233" />
     <state x="2981" y="488" width="695" height="486" key="find.popup" timestamp="1619509298071">
       <screen x="2048" y="23" width="2560" height="1417" />
     </state>
@@ -79,9 +79,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
-          <url>file://$PROJECT_DIR$/lib/src/web_request.dart</url>
-          <line>20</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
+          <line>145</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/web_router.dart</url>
+          <line>62</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

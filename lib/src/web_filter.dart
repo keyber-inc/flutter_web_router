@@ -86,7 +86,7 @@ class WebFilterIterator implements Iterator<WebFilter> {
   WebFilterIterator(this._filters);
 
   final List<WebFilter> _filters;
-  int _index = 0;
+  int _index = -1;
 
   @override
   bool moveNext() {
