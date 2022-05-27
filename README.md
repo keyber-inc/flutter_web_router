@@ -1,3 +1,7 @@
+# This package is discontinued and will receive no further updates
+
+**PLEASE NOTE:** Use [go_router](https://pub.dev/packages/go_router) instead.
+
 # flutter_web_router
 
 A router that handles request URIs with wildcards and generate URIs with parameters.
